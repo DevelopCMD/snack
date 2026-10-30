@@ -159,6 +159,12 @@ ENV/
 env.bak/
 venv.bak/
 
+# Beh
+test.sb3
+hi.sb3
+input.sb3
+sample.sb3
+
 ### Virtual Environments ###
 
 virtualenv/
