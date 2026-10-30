@@ -1,22 +1,24 @@
 import pygame
 import sys
 
+from SnackRenderer import Renderer
+
 def main():
     pygame.init()
     try:
         screen = pygame.display.set_mode((480, 360))
+        renderer = Renderer
         clock = pygame.time.Clock()
         pygame.display.set_caption("snack")
         running = True
 
         while running:
+            dt = min(clock.tick(30) / 1000.0, 0.1)
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
-            screen.fill((255, 255, 255))
-            dt = min(clock.tick(30) / 1000.0, 0.1)
+            renderer.draw(screen)
             pygame.display.flip()
-            clock.tick(dt)
     except Exception as exc:
         print(f"Error: {exc}")
         raise
